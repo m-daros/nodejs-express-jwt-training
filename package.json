@@ -1,0 +1,38 @@
+{
+  "name": "nodejs-express-jwt-training",
+  "version": "1.0.0",
+  "description": "Exercises for NodeJS, Express.js and JWT",
+  "main": "app.js",
+  "scripts": {
+    "startServerA": "HOST=localhost PORT=3000 REMOTE_HOST=localhost REMOTE_PORT=4000 nodemon app.js",
+    "startServerB": "HOST=localhost PORT=4000 REMOTE_HOST=localhost REMOTE_PORT=3000 nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/m-daros/nodejs-express-jwt-training.git"
+  },
+  "author": "m-daros",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/m-daros/nodejs-express-jwt-training/issues"
+  },
+  "homepage": "https://github.com/m-daros/nodejs-express-jwt-training#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "test/*",
+      "docs/*"
+    ],
+    "delay": 1000
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.12.1",
+    "jsonwebtoken": "^8.5.1"
+  }
+}

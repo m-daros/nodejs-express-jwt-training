@@ -1,0 +1,8 @@
+module.exports = {
+
+    remoteServerHost: process.env.REMOTE_HOST,
+    remoteServerport: process.env.REMOTE_PORT,
+
+    serverHost: process.env.HOST,
+    serverPort: process.env.PORT
+}
