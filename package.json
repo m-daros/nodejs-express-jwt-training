@@ -4,8 +4,8 @@
   "description": "Exercises for NodeJS, Express.js and JWT",
   "main": "app.js",
   "scripts": {
-    "startServerA": "HOST=localhost PORT=3000 REMOTE_HOST=localhost REMOTE_PORT=4000 nodemon app.js",
-    "startServerB": "HOST=localhost PORT=4000 REMOTE_HOST=localhost REMOTE_PORT=3000 nodemon app.js",
+    "startServerA": "HOST=localhost PORT=3000 REMOTE_HOST=localhost REMOTE_PORT=4000 ISSUER=serverA nodemon app.js",
+    "startServerB": "HOST=localhost PORT=4000 REMOTE_HOST=localhost REMOTE_PORT=3000 ISSUER=serverB nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

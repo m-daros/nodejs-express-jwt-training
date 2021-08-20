@@ -1,5 +1,6 @@
 const axios = require ( "axios" )
 const config = require ( "../config/config" )
+const constants = require ( "../config/constants" )
 
 exports.receiveGreetings = ( request, response, next ) => {
 
@@ -10,8 +11,12 @@ exports.receiveGreetings = ( request, response, next ) => {
 
 exports.sendGreetings = ( request, response, next ) => {
 
-    console.log ( `Sending greetings to http://${config.remoteServerHost}:${config.remoteServerport}` )
-    axios.get ( `http://${config.remoteServerHost}:${config.remoteServerport}/api/v1/greetings?name=mario` ) // TODO Extract name from request body
+    const url = `http://${config.remoteServerHost}:${config.remoteServerport}/api/v1/greetings?name=${request.query.name}`
+
+    const authorizationHeader = request.headers [ constants.AUTHORIZATION_HEADER ]
+
+    console.log ( `Sending greetings to ${url}` )
+    axios.get ( url, { headers: { "Authorization": authorizationHeader } } )
         .then ( remoteResponse => {
 
             response.status ( 200 ).send ( "Greetings sent" )
